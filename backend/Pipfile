@@ -13,6 +13,11 @@ flask-mail = "*"
 flask-login = "*"
 flask-cors = "*"
 flask-testing = "*"
+spacy = "*"
+scrapy = "*"
+tensorflow = "*"
+pandas = "*"
+scikit-learn = "*"
 
 [dev-packages]
 
