@@ -1,31 +1,27 @@
-# drug_safety_drug_safety_monitoring_application/app.py
-from flask import Flask, render_template, request, jsonify
-from services.review_service import process_review  # Import our service layer function
-
-app = Flask(__name__)
-
-@app.route('/', methods=['GET', 'POST'])
-def index():
-    if request.method == 'POST':
-        review = request.form.get('review')
-        prediction = process_review(review)  # Use the service layer function
-        return jsonify(prediction=prediction)
-    return render_template('index.html')
-# backend/app.py
+# backend/app/app.py
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
+# Initialize the Flask application
 app = Flask(__name__)
-app.config.from_object('config')  # Assuming 'config.py' contains Flask & DB configurations
 
+# Load configurations from environment or config file
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+# Initialize SQLAlchemy and Flask-Migrate
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-# Import and register routes here
-# from backend.routes import main_routes
-# app.register_blueprint(main_routes)
+# Importing routes
+from .routes import main_routes
 
-if __name__ == '__main__':
+# Registering routes with the app
+app.register_blueprint(main_routes)
+
+# Models and services can be imported below or in their respective files
+
+if __name__ == "__main__":
     app.run(debug=True)

@@ -15,7 +15,7 @@
     </form>
 
     {% if prediction is defined %}
-        <p><strong>Prediction:</strong> {{ "Severe side effects detected!" if prediction else "No severe side effects detected." }}</p>
+        <p><strong>Prediction:</strong> {{ "Serious adverse effects detected!" if prediction else "No serious adverse effects detected." }}</p>
     {% endif %}
 
     <br>
