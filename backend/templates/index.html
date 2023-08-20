@@ -1,0 +1,18 @@
+<!-- backend/templates/index.html -->
+
+<html>
+<head>
+    <title>Drug Safety Monitoring</title>
+</head>
+<body>
+    <h1>Welcome to Drug Safety Monitoring</h1>
+    <input type="text" name="drug_name" placeholder="Enter drug name">
+    <form method="post">
+        <textarea name="review_text"></textarea>
+        <button type="submit">Submit Review</button>
+    </form>
+    {% if prediction is defined %}
+        <p><strong>Prediction:</strong> {{ "Severe side effects detected!" if prediction else "No severe side effects detected." }}</p>
+    {% endif %}
+</body>
+</html>
