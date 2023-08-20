@@ -3,16 +3,22 @@
 <html>
 <head>
     <title>Drug Safety Monitoring</title>
+    <!-- Add some basic styling or include CSS files here later on -->
 </head>
 <body>
     <h1>Welcome to Drug Safety Monitoring</h1>
-    <input type="text" name="drug_name" placeholder="Enter drug name">
+    
     <form method="post">
-        <textarea name="review_text"></textarea>
+        <input type="text" name="drug_name" placeholder="Enter drug name"><br><br>
+        <textarea name="review_text" placeholder="Enter your review..."></textarea><br><br>
         <button type="submit">Submit Review</button>
     </form>
+
     {% if prediction is defined %}
         <p><strong>Prediction:</strong> {{ "Severe side effects detected!" if prediction else "No severe side effects detected." }}</p>
     {% endif %}
+
+    <br>
+    <a href="/all_reviews">View All Reviews</a>
 </body>
 </html>
