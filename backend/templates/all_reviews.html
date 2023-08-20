@@ -1,0 +1,19 @@
+<!-- backend/templates/all_reviews.html -->
+
+<html>
+<head>
+    <title>All Reviews</title>
+</head>
+<body>
+    <h1>All Drug Reviews</h1>
+    <ul>
+    {% for review in reviews %}
+        <li>
+            <strong>Drug:</strong> {{ review.drug_name }} <br>
+            <strong>Review:</strong> {{ review.review_text }} <br>
+            <strong>Reported at:</strong> {{ review.reported_at }}
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
