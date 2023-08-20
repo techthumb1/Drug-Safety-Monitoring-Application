@@ -18,6 +18,7 @@ scrapy = "*"
 tensorflow = "*"
 pandas = "*"
 scikit-learn = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 
