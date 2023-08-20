@@ -11,3 +11,21 @@ def index():
         prediction = process_review(review)  # Use the service layer function
         return jsonify(prediction=prediction)
     return render_template('index.html')
+# backend/app.py
+
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+
+app = Flask(__name__)
+app.config.from_object('config')  # Assuming 'config.py' contains Flask & DB configurations
+
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+
+# Import and register routes here
+# from backend.routes import main_routes
+# app.register_blueprint(main_routes)
+
+if __name__ == '__main__':
+    app.run(debug=True)
