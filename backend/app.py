@@ -29,21 +29,23 @@
 ###if __name__ == "__main__":
 ###    app.run(debug=True)
 ###
+
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
-from config import Config
+from extensions import db
 
-app = Flask(__name__)
-app.config.from_object(Config)
+def create_app():
+    app = Flask(__name__)
+    app.config.from_object('config.Config')
+    
+    # Initialize extensions
+    db.init_app(app)
 
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
+    # Register blueprints here
+    from routes.main_routes import main
+    app.register_blueprint(main)
+    
+    return app
 
-from routes import main_routes, api_routes
-app.register_blueprint(main_routes)
-app.register_blueprint(api_routes, url_prefix='/api')
-
-if __name__ == "__main__":
-    app.run(debug=True)
-
+if __name__ == '__main__':
+    app = create_app()
+    app.run()

@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template
 from models.drug_review import DrugReview
 
-main_routes = Blueprint('main_routes', __name__)
+main_routes = Blueprint('main', __name__)
 
 @main_routes.route('/')
 def index():
