@@ -1,51 +1,51 @@
-DrugSafetyMonitoringApp/
-│
-├── backend/                        # Backend-related files
-│   ├── app.py                      # Flask application entry point
-│   ├── Pipfile                     # Pipenv file for dependency management
-│   ├── Pipfile.lock                # Pipenv lock file
-│   ├── .env                        # Environment variables file (like SECRET_KEY, DB_URI)
-│   ├── db.sqlite3                  # Database (can be PostgreSQL or other in production)
-│   ├── models/                     # Database models
-│   │   ├── __init__.py
-│   │   ├── drug_review.py          # Model for drug reviews
-│   │   └── ...
-│   ├── services/                   # Business logic
-│   │   ├── __init__.py
-│   │   ├── review_service.py       # Logic for review processing
-│   │   └── ...
-│   ├── static/                     # Static files (CSS, JS, images)
-│   │   ├── css/
-│   │   │   └── main.css            # Main stylesheet
-│   │   ├── js/
-│   │   │   └── main.js             # Main JS logic (if any)
-│   │   └── images/
-│   ├── templates/                  # Jinja2 templates
-│   │   ├── base.html               # Base template (contains common structure like header, footer)
-│   │   ├── index.html              # Main page for drug review submission & result display
-│   │   └── ...
-│   ├── routes/                     # Flask routes
-│   │   ├── __init__.py
-│   │   ├── main_routes.py          # Main Flask routes (e.g. homepage, submission page)
-│   │   └── api_routes.py           # API routes if needed for AJAX calls or other services
-│   ├── ml_models/                  # ML/DL models and related files
-│   │   ├── __init__.py
-│   │   ├── review_processor.py     # Pre-processing logic for drug reviews
-│   │   └── drug_safety_model.h5    # Saved DL model for drug safety predictions
-│   └── config.py                   # Configuration (contains Flask configuration, can be split like the settings in Django)
-│
-├── frontend/                       # Frontend-related files (considering ReactJS or VueJS)
-│   ├── package.json
-│   ├── package-lock.json
-│   ├── .env                        # Frontend environment variables
-│   ├── public/
-│   │   └── index.html
-│   ├── src/
-│   │   ├── App.js
-│   │   ├── index.js
-│   │   └── ...
-│   └── ...
-│
-├── .gitignore                      # Ensure the backend .env is added here!
-├── README.md
-└── LICENSE
+DrugSafetyMonitoringApp/<br>
+│<br>
+├── backend/ # Backend-related files<br>
+│ ├── app.py # Flask application entry point<br>
+│ ├── Pipfile # Pipenv file for dependency management<br>
+│ ├── Pipfile.lock # Pipenv lock file to ensure deterministic builds<br>
+│ ├── .env # Environment variables file<br>
+│ ├── db.sqlite3 # SQLite database for development<br>
+│ ├── models/ # Database models<br>
+│ │ ├── init.py<br>
+│ │ ├── drug_review.py # Model for drug reviews<br>
+│ │ └── ...<br>
+│ ├── services/ # Business logic<br>
+│ │ ├── init.py<br>
+│ │ ├── review_service.py # Service for review processing<br>
+│ │ └── ...<br>
+│ ├── static/ # Static files<br>
+│ │ ├── css/<br>
+│ │ │ └── main.css # Main stylesheet<br>
+│ │ ├── js/<br>
+│ │ │ └── main.js # Main JavaScript file<br>
+│ │ └── images/<br>
+│ ├── templates/ # Jinja2 templates<br>
+│ │ ├── base.html # Base template<br>
+│ │ ├── index.html # Index page template<br>
+│ │ └── ...<br>
+│ ├── routes/ # Web routes<br>
+│ │ ├── init.py<br>
+│ │ ├── main_routes.py # Main routes for the application<br>
+│ │ └── api_routes.py # API routes<br>
+│ ├── ml_models/ # Machine Learning models<br>
+│ │ ├── init.py<br>
+│ │ ├── review_processor.py # Review processing utilities<br>
+│ │ └── drug_safety_model.h5 # Trained ML model for predictions<br>
+│ └── config.py # Configuration settings<br>
+│<br>
+├── frontend/ # Frontend-related files<br>
+│ ├── package.json # Node.js package definition<br>
+│ ├── package-lock.json # Node.js locked dependencies<br>
+│ ├── .env # Frontend environment variables<br>
+│ ├── public/<br>
+│ │ └── index.html # HTML entry point<br>
+│ ├── src/<br>
+│ │ ├── App.js # Main React/Vue application file<br>
+│ │ ├── index.js # JavaScript entry point<br>
+│ │ └── ...<br>
+│ └── ...<br>
+│<br>
+├── .gitignore # Specifies intentionally untracked files to ignore<br>
+├── README.md # The file you're reading right now<br>
+└── LICENSE # Legal terms of use<br>
